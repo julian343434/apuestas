@@ -2,7 +2,8 @@
 #include <string>
 using namespace std;
 int main (){
-    string local="a",visitante="s",gpp="si";
+    string local="a",visitante="s",gpp="si",got="hola";
+    float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,l=1,resultado2=0,opcion=0;
     int v[]={1,2,3,4},n[]={1,2,3,4},gppl[]={1,2,3,4},gppv[]={1,2,3,4};
 
@@ -36,7 +37,23 @@ int main (){
             break;
             
             case 1:
-				cout<<"puto";
+                cout<<"digite la cantidad de goles anotados en la \ncompetencia de el LOCAL y luego del VISITANTE. \n";
+				cin>>v[i]>>n[i];
+                cout<<"digite la cantidad de goles encontra de el \nequipo LOCAL y luego del VISITANTE\n";
+                cin>>gecl>>gecv;
+                promgl=v[i]-gecl;
+                promgv=n[i]-gecv;
+                if(promgl>=(promgv*2)){
+                    got="gana el equipo LOCAL ";
+                }
+                else {
+                     if(promgv>=(promgl*2)){
+                    got="gana el equipo VISITANTE ";
+                    }
+                    else{
+                    got="no apueste por el";
+                    }
+                }
             break;
             
 			default: cout<<"usted ha sellecionado una opcion incorrecta";
