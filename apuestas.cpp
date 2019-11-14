@@ -1,15 +1,16 @@
 #include <iostream>
 #include <string>
+#include <conio.h>
 using namespace std;
 int main (){
-    string local="a",visitante="s",gpp="si",got="hola",lov="no";
+    string local="s",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,l=1,resultado2=0,opcion=0,posicion=0;
-    int v[]={1,2,3,4},n[]={1,2,3,4},gppl[]={1,2,3,4},gppv[]={1,2,3,4};
+    int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4};
 
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
     cin>>local>>visitante;
-    for (int i=0;i<=3;i++){
+    for (int i=0;i<=2;i++){
         switch(opcion=i){
             case 0:
                 cout<<"digite el promedio de goles por partido \ndel equipo LOCAL y luego del VISITANTE\n";
@@ -44,14 +45,14 @@ int main (){
                 promgl=v[i]-gecl;
                 promgv=n[i]-gecv;
                 if(promgl>=(promgv*2)){
-                    got="gana el equipo LOCAL ";
+                    got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                 }
                 else {
                      if(promgv>=(promgl*2)){
-                    got="gana el equipo VISITANTE ";
+                    got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
                     }
                     else{
-                    got="no apueste por el";
+                    got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
                     }
                 }
             break;
@@ -62,26 +63,31 @@ int main (){
             	if (v[i]>n[i]){
             		posicion=v[i]-n[i];
             		if (posicion>7){
-						lov="apueste por el equipo LOCAL";
+						lov="los dos equipos hacen almenos un gol SI";
 					}
 					else{
-						lov="no apueste por 1x2";
+						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
 					}
 				}
 				else {
 					posicion=n[i]-v[i];
 						if (posicion>7){
-						lov="apueste por el equipo VISITANTE";
+						lov="apueste por el equipo VISITANTE [[]]SUERTE CRACK[[]]";
 					}
 					else{
-						lov="no apueste por 1x2";
+						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
 					}
 				}
 			break;
-			default: cout<<"usted ha sellecionado una opcion incorrecta";
+			
+			default: cout<<"adios espero que le sirva ;v";
 			;
         }
         opcion=opcion+1;
     }
+    
+    cout<<"entre el enfrentamiento de "<<local<<" vs "<<visitante<<"\n"<<gpp<<"\n"<<got<<"\n"<<lov;
+    
+    getch ();
     return 0;
 }
