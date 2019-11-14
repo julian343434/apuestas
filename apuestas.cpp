@@ -2,9 +2,9 @@
 #include <string>
 using namespace std;
 int main (){
-    string local="a",visitante="s",gpp="si",got="hola";
+    string local="a",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
-    int resultado1=0,l=1,resultado2=0,opcion=0;
+    int resultado1=0,l=1,resultado2=0,opcion=0,posicion=0;
     int v[]={1,2,3,4},n[]={1,2,3,4},gppl[]={1,2,3,4},gppv[]={1,2,3,4};
 
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
@@ -12,7 +12,7 @@ int main (){
     for (int i=0;i<=3;i++){
         switch(opcion=i){
             case 0:
-                cout<<"digite el promedio de goles por partido \n del equipo LOCAL y luego del VISITANTE\n";
+                cout<<"digite el promedio de goles por partido \ndel equipo LOCAL y luego del VISITANTE\n";
                 cin>>v[i]>>n[i];
                 resultado1=(v[i]+n[i])/2;
                 if (resultado1>=6){
@@ -56,6 +56,28 @@ int main (){
                 }
             break;
             
+            case 2:
+            	cout<<"digite la posicion de el equipo LOCAL y el \nVISITANTE en la calsificacion general\n";
+            	cin>>v[i]>>n[i];
+            	if (v[i]>n[i]){
+            		posicion=v[i]-n[i];
+            		if (posicion>7){
+						lov="apueste por el equipo LOCAL";
+					}
+					else{
+						lov="no apueste por 1x2";
+					}
+				}
+				else {
+					posicion=n[i]-v[i];
+						if (posicion>7){
+						lov="apueste por el equipo VISITANTE";
+					}
+					else{
+						lov="no apueste por 1x2";
+					}
+				}
+			break;
 			default: cout<<"usted ha sellecionado una opcion incorrecta";
 			;
         }
