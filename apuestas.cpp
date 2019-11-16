@@ -44,19 +44,39 @@ int main (){
                 cin>>gecl>>gecv;
                 promgl=v[i]-gecl;
                 promgv=n[i]-gecv;
-                if(promgl>=(promgv*2)){
-                    got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
-                }
-                else {
-                     if(promgv>=(promgl*2)){
-                    got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+                if((promgl>=0)&&(promgv>=0)){
+                    if(promgl>=(promgv*2)){
+                        got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                     }
-                    else{
-                    got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
+                    else {
+                         if(promgv>=(promgl*2)){
+                        got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+                        }
+                        else{
+                        got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
+                        }
+                    }
+                }
+                else{
+                    if((promgv<0)&&(promgl>=0)){
+                        if(promgl>=(-(promgv*2))){
+                            got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
+                        }
+                        else{
+                            got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
+                        }  
+                    }
+                     else{
+                        if(promgv>=(-(promgl*2))){
+                            got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+                        }
+                        else{
+                            got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
+                        }
                     }
                 }
             break;
-            
+
             case 2:
             	cout<<"digite la posicion de el equipo LOCAL y el \nVISITANTE en la calsificacion general\n";
             	cin>>v[i]>>n[i];
