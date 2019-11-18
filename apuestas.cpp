@@ -83,16 +83,16 @@ int main (){
             	if (v[i]>n[i]){
             		posicion=v[i]-n[i];
             		if (posicion>7){
-						lov="los dos equipos hacen almenos un gol SI";
+						lov="no apueste al handicap";
 					}
 					else{
-						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
+						lov="apueste al hadicap +1.5 o +1 al LOCAL\n o los dos equipos hacen gol [[]]SUERTE CRACK[[]]";
 					}
 				}
 				else {
 					posicion=n[i]-v[i];
 						if (posicion>7){
-						lov="apueste por el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
 					}
 					else{
 						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
