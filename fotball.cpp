@@ -13,18 +13,18 @@ int futball (){
                 cout<<"digite el promedio de goles por partido \ndel equipo LOCAL y luego del VISITANTE\n";
                 cin>>v[i]>>n[i];
                 resultado1=(v[i]+n[i])/2;
-                if (resultado1>=6){
-                    gpp="se puede apostar al over +4.5 [[]]SUERTE CRACK[[]]";
+                if (resultado1>=3){
+                    gpp="se puede apostar al over +1.5 [[]]SUERTE CRACK[[]]";
                 }
                 else{
                     for (int j=0;j<=3;j++){
                     cout<<"digita los goles totales de el partido #"<<l<<" \n que se jugaron en las ultimas fechas  de \n el LOCAL y el VISITANTE luego. \n";
                     cin>>gppl[j]>>gppv[j];
-                    if ((gppl[j]<=7)&&(gppv[j]<=7)){
+                    if ((gppl[j]<=4)&&(gppv[j]<=4)){
                     	resultado2=resultado2+1;
                     }
                     if (resultado2>=3){
-                    	gpp="se puede apostar al under -7.5 [[]]SUERTE CRACK[[]]";
+                    	gpp="se puede apostar al under -4.5 [[]]SUERTE CRACK[[]]";
 					}
 					else{
 						gpp="no apueste ni por el under ni por el over [[]]SUERTE CRACK[[]]";
@@ -43,11 +43,11 @@ int futball (){
                 promgv=n[i]-gecv;
                 if((promgl>=0)&&(promgv>=0)){
                     if(promgl>=(promgv*2)){
-                        got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
+                        got="gana el equipo LOCAL o empata [[]]SUERTE CRACK[[]]";
                     }
                     else {
                          if(promgv>=(promgl*2)){
-                        got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+                        got="gana el equipo VISITANTE o empata [[]]SUERTE CRACK[[]]";
                         }
                         else{
                         got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
@@ -57,7 +57,7 @@ int futball (){
                 else{
                     if((promgv<0)&&(promgl>=0)){
                         if(promgl>=(-(promgv*2))){
-                            got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
+                            got="gana el equipo LOCAL o empata [[]]SUERTE CRACK[[]]";
                         }
                         else{
                             got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
@@ -65,7 +65,7 @@ int futball (){
                     }
                      else{
                         if(promgv>=(-(promgl*2))){
-                            got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
+                            got="gana el equipo VISITANTE o empata [[]]SUERTE CRACK[[]]";
                         }
                         else{
                             got="los dos equipos hacen almenos un gol SI [[]]SUERTE CRACK[[]]";
