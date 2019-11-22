@@ -3,11 +3,13 @@
 #include <conio.h>
 using namespace std;
 int main (){
-    string local="s",visitante="s",gpp="si",got="hola",lov="no";
+	bool cierre=true;
+	string local="s",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,l=1,resultado2=0,opcion=0,posicion=0;
     int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4};
-
+    
+	while(cierre!=false){
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
     cin>>local>>visitante;
     for (int i=0;i<=2;i++){
@@ -35,6 +37,7 @@ int main (){
                     l=l+1;
                     }
                 }
+                resultado2=0;
             break;
             
             case 1:
@@ -105,9 +108,17 @@ int main (){
         }
         opcion=opcion+1;
     }
-    
+    //aqui impreime los resultados
     cout<<"entre el enfrentamiento de "<<local<<" vs "<<visitante<<"\n"<<gpp<<"\n"<<got<<"\n"<<lov;
-    
+	//cierre del bucle mas grande 
+	
+	
+	cout<<"\ndigite si quiero continual con otro equipo o no\n (TRUE / FALSE) ";
+    cin>>cierre;
+	
+	
+	}
+
     getch ();
     return 0;
 }
