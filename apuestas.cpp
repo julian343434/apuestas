@@ -7,7 +7,7 @@ int main (){
 	string local="s",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,acumuladorMA=0,l=1,resultado2=0,opcion=0,posicion=0,ganadorl=0,ganadorv=0;
-    int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4},rdp[]={1,2,3,4},sumaMA[]={1,2,3,4},gpplee[]={1,2,3,4},gppvee[]={1,2,3,4};//,gpplee[]={1,2,},gppvee[]={1,2};
+    int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4},rdp[]={1,2,3,4},sumaMA[]={1,2,3,4},gpplee[]={1,2,3,4,5},gppvee[]={1,2,3,4,5};//,gpplee[]={1,2,},gppvee[]={1,2};
     
 	while(cierre!=false){
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
@@ -18,11 +18,11 @@ int main (){
                 cout<<"digite el promedio de goles por partido \ndel equipo LOCAL y luego del VISITANTE\n";
                 cin>>v[i]>>n[i];
                 resultado1=(v[i]+n[i])/2;
-                for(int j=0;j<4;j++){
+                for(int j=0;j<5;j++){
                 	cout<<"digite los goles del el LOCAL y luego del visitante \nen el partido #"<<l<<"entre ellos en sus ultimos ENCUENTROS  \n";
                 	cin>>gpplee[j]>>gppvee[j];
                 	sumaMA[j]=( gpplee[j]+gppvee[j])/2;
-                	if(sumaMA[j]>6){
+                	if(sumaMA[j]>=6){
                 		acumuladorMA=acumuladorMA+1;
 					}
 					if(gpplee[j]>(gppvee[j])){
@@ -34,7 +34,7 @@ int main (){
                 	l=l+1;
 				}
 				l=1;
-                if ((resultado1>=6)&&(acumuladorMA>=3)){
+                if ((resultado1>=6)&&(acumuladorMA>=4)){
                     gpp="se puede apostar al over +4.5 [[]]SUERTE CRACK[[]]";
                 }
                 else{
@@ -44,7 +44,7 @@ int main (){
                     if ((gppl[j]<=7)&&(gppv[j]<=7)){
                     	resultado2=resultado2+1;
                     }
-                    if ((resultado2>=3)&&(acumuladorMA<3)){
+                    if ((resultado2>=3)&&(acumuladorMA<4)){
                     	gpp="se puede apostar al under -7.5 [[]]SUERTE CRACK[[]]";
 					}
 					else{
@@ -64,12 +64,12 @@ int main (){
                 l=1;
                 promgl=v[i]-gecl;
                 promgv=n[i]-gecv;
-				if (ganadorv>=3){
+				if (ganadorv>=4){
 						mg=true;
 						siS=true;
 					}
 					else{
-						if(ganadorl>=3){
+						if(ganadorl>=4){
 							mg=false;
 							siS=true;	
 						}
