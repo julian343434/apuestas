@@ -3,7 +3,7 @@
 #include <conio.h>
 using namespace std;
 int main (){
-	bool cierre=true,mg=true;
+	bool cierre=true,mg=true,siS=false;
 	string local="s",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,acumuladorMA=0,l=1,resultado2=0,opcion=0,posicion=0,ganadorl=0,ganadorv=0;
@@ -64,23 +64,25 @@ int main (){
                 l=1;
                 promgl=v[i]-gecl;
                 promgv=n[i]-gecv;
-				if (ganadorv>3){
+				if (ganadorv>=3){
 						mg=true;
+						siS=true;
 					}
 					else{
-						if(ganadorl>3){
-							mg=false;	
+						if(ganadorl>=3){
+							mg=false;
+							siS=true;	
 						}
 						else{
-							
+							siS=false;
 						}
 					}
                 if((promgl>=0)&&(promgv>=0)){ //analisa el coeficiente de goles de un equipo determinado
-                    if(( promgl>=(promgv*2))&&(mg=false)){
+                    if(( promgl>=(promgv*2))&&((mg=false)&&(siS=true))){
                         got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                     }
                     else {
-                        if((promgv>=(promgl*2))&&(mg=true)){
+                        if((promgv>=(promgl*2))&&((mg=true)&&(siS=true))){
 						got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
                         }
                         else{
@@ -90,7 +92,7 @@ int main (){
                 }
                 else{
                     if((promgv<0)&&(promgl>=0)){
-                        if((promgl>=(-(promgv*2)))&&(mg=false)){
+                        if((promgl>=(-(promgv*2)))&&((mg=false)&&(siS=true))){
                             got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                         }
                         else{
@@ -98,7 +100,7 @@ int main (){
                         }  
                     }
                      else{
-                        if((promgv>=(-(promgl*2)))&&(mg=true)){
+                        if((promgv>=(-(promgl*2)))&&((mg=true)&&(siS=true))){
                             got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
                         }
                         else{
