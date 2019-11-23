@@ -115,7 +115,7 @@ int main (){
             	cin>>v[i]>>n[i];
             	if (v[i]>n[i]){
             		posicion=v[i]-n[i];
-            		if (posicion>7){
+            		if (posicion>4){
 						lov="no apueste al handicap";
 					}
 					else{
@@ -124,7 +124,7 @@ int main (){
 				}
 				else {
 					posicion=n[i]-v[i];
-						if (posicion>7){
+					if (posicion>4){
 						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
 					}
 					else{
