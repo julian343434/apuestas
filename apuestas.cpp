@@ -33,7 +33,7 @@ int main (){
 					}
                 	l=l+1;
 				}
-				
+				l=1;
                 if ((resultado1>=6)&&(acumuladorMA>=3)){
                     gpp="se puede apostar al over +4.5 [[]]SUERTE CRACK[[]]";
                 }
