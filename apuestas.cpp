@@ -18,8 +18,7 @@ int main (){
                 cout<<"digite el promedio de goles por partido \ndel equipo LOCAL y luego del VISITANTE\n";
                 cin>>v[i]>>n[i];
                 resultado1=(v[i]+n[i])/2;
-               
-                for(int j=0;j<4;i++){
+                for(int j=0;j<4;j++){
                 	cout<<"digite los goles del el LOCAL y luego del visitante \nen el partido #"<<l<<"entre ellos los ultimos 4 encuentros entre ellos \n";
                 	cin>>gpplee[j]>>gppvee[j];
                 	sumaMA[j]=( gpplee[j]+gppvee[j])/2;
