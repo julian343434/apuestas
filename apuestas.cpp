@@ -19,7 +19,7 @@ int main (){
                 cin>>v[i]>>n[i];
                 resultado1=(v[i]+n[i])/2;
                 for(int j=0;j<4;j++){
-                	cout<<"digite los goles del el LOCAL y luego del visitante \nen el partido #"<<l<<"entre ellos los ultimos 4 encuentros entre ellos \n";
+                	cout<<"digite los goles del el LOCAL y luego del visitante \nen el partido #"<<l<<"entre ellos en sus ultimos ENCUENTROS  \n";
                 	cin>>gpplee[j]>>gppvee[j];
                 	sumaMA[j]=( gpplee[j]+gppvee[j])/2;
                 	if(sumaMA[j]>6){
@@ -39,7 +39,7 @@ int main (){
                 }
                 else{
                     for (int j=0;j<=3;j++){
-                    cout<<"digita los goles totales de el partido #"<<l<<" \n que se jugaron en las ultimas fechas  de \n el LOCAL y el VISITANTE luego. \n";
+                    cout<<"digita los goles totales de el partido #"<<l<<" \n que se jugaron en las ultimas fechas LIGA  de \n el LOCAL y el VISITANTE luego. \n";
                     cin>>gppl[j]>>gppv[j];
                     if ((gppl[j]<=7)&&(gppv[j]<=7)){
                     	resultado2=resultado2+1;
