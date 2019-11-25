@@ -21,7 +21,7 @@ int main (){
                 for(int j=0;j<5;j++){
                 	cout<<"digite los goles del el LOCAL y luego del visitante \nen el partido #"<<l<<"entre ellos en sus ultimos ENCUENTROS  \n";
                 	cin>>gpplee[j]>>gppvee[j];
-                	sumaMA[j]=( gpplee[j]+gppvee[j])/2;
+                	sumaMA[j]=gpplee[j]+gppvee[j];
                 	if(sumaMA[j]>=6){
                 		acumuladorMA=acumuladorMA+1;
 					}
@@ -116,7 +116,7 @@ int main (){
             	if (v[i]>n[i]){
             		posicion=v[i]-n[i];
             		if (posicion>4){
-						lov="no apueste al handicap";
+						lov="apueste al hadicap +1.5 o +1 al LOCAL ";
 					}
 					else{
 						lov="apueste al hadicap +1.5 o +1 al LOCAL\n o los dos equipos hacen gol [[]]SUERTE CRACK[[]]";
@@ -124,7 +124,7 @@ int main (){
 				}
 				else {
 					posicion=n[i]-v[i];
-					if (posicion>4){
+					if (posicion>3){
 						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
 					}
 					else{
