@@ -8,7 +8,6 @@ int main (){
     float gecl=0,gecv=0,promgl=0,promgv=0;
     int resultado1=0,acumuladorMA=0,l=1,resultado2=0,opcion=0,posicion=0,ganadorl=0,ganadorv=0;
     int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4},rdp[]={1,2,3,4},sumaMA[]={1,2,3,4},gpplee[]={1,2,3,4,5},gppvee[]={1,2,3,4,5};//,gpplee[]={1,2,},gppvee[]={1,2};
-    
 	while(cierre!=false){
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
     cin>>local>>visitante;
@@ -44,14 +43,14 @@ int main (){
                     if ((gppl[j]<=7)&&(gppv[j]<=7)){
                     	resultado2=resultado2+1;
                     }
-                    if ((resultado2>=3)&&(acumuladorMA<4)){
+                       l=l+1;
+     	            } 
+                    if ((resultado2>=3)&&(acumuladorMA<=1)){
                     	gpp="se puede apostar al under -7.5 [[]]SUERTE CRACK[[]]";
 					}
 					else{
 						gpp="no apueste ni por el under ni por el over [[]]SUERTE CRACK[[]]";
 					}
-                    l=l+1;
-                    }
                 }
                 resultado2=0;
             break;
@@ -67,16 +66,17 @@ int main (){
 				if (ganadorv>=4){
 						mg=true;
 						siS=true;
+				}
+				else{
+					if(ganadorl>=4){
+						mg=false;
+						siS=true;	
 					}
 					else{
-						if(ganadorl>=4){
-							mg=false;
-							siS=true;	
-						}
-						else{
-							siS=false;
-						}
+						siS=false;
 					}
+				cout<<ganadorv<<ganadorl;
+				}
                 if((promgl>=0)&&(promgv>=0)){ //analisa el coeficiente de goles de un equipo determinado
                     if(( promgl>=(promgv*2))&&((mg=false)&&(siS=true))){
                         got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
