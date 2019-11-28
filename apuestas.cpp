@@ -6,7 +6,7 @@ int main (){
 	bool cierre=true,mg=true,siS=false;
 	string local="s",visitante="s",gpp="si",got="hola",lov="no";
     float gecl=0,gecv=0,promgl=0,promgv=0;
-    int resultado1=0,SI=0,acumuladorMA=0,l=1,resultado2=0,opcion=0,posicion=0,ganadorl=0,ganadorv=0;
+    int resultado1=0,k=0,SI=0,acumuladorMA=0,l=1,resultado2=0,opcion=0,posicion=0,ganadorl=0,ganadorv=0;
     int v[]={1,2,3},n[]={1,2,3},gppl[]={1,2,3,4},gppv[]={1,2,3,4},rdp[]={1,2,3,4},sumaMA[]={1,2,3,4},gpplee[]={1,2,3,4,5},gppvee[]={1,2,3,4,5};//,gpplee[]={1,2,},gppvee[]={1,2};
 	while(cierre!=false){
     cout<<"digite el nombre del equipo local y luego el del visitante\n";
@@ -36,7 +36,7 @@ int main (){
                 	l=l+1;
 				}
 				l=1;
-                if ((resultado1>=6)&&(acumuladorMA>=4)){
+                if ((resultado1>=6)&&(acumuladorMA>=4)){//analisa los over y under
                     gpp="se puede apostar al over +4.5 [[]]SUERTE CRACK[[]]";
                 }
                 else{
@@ -63,29 +63,50 @@ int main (){
 				cin>>v[i]>>n[i];
                 cout<<"digite la cantidad de goles encontra de el \nequipo LOCAL y luego del VISITANTE\n";
                 cin>>gecl>>gecv;
+                cout<<"digite la posicion de el equipo LOCAL y el \nVISITANTE en la calsificacion general\n";
+                k=i+1;
+            	cin>>v[k]>>n[k];
                 l=1;
                 promgl=v[i]-gecl;
                 promgv=n[i]-gecv;
-				if (ganadorv>=4){
-						mg=true;
-						siS=true;
+				if (ganadorv>=4){//determina el maximo ganador entre estos
+						mg=1;
+						siS=1;
 				}
 				else{
 					if(ganadorl>=4){
-						mg=false;
-						siS=true;	
+						mg=0;
+						siS=1;	
 					}
 					else{
-						siS=false;
+						siS=0;
 					}
 				cout<<ganadorv<<ganadorl;
 				}
-                if((promgl>=0)&&(promgv>=0)){ //analisa el coeficiente de goles de un equipo determinado
-                    if(( promgl>=(promgv*2))&&((mg=false)&&(siS=true))){
+				if (v[k]>n[k]){//analisa las posiciones 
+            		posicion=v[k]-n[k];
+            		if (posicion>4){
+						lov="apueste al hadicap +1.5 o +1 al LOCAL ";
+					}
+					else{
+						lov="apueste al hadicap +1.5 o +1 al LOCAL\n o los dos equipos hacen gol [[]]SUERTE CRACK[[]]";
+					}
+				}
+				else {
+					posicion=n[k]-v[k];
+					if (posicion>3){
+						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
+					}
+					else{
+						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
+					}
+				}
+                if((promgl>=0)&&(promgv>=0)){ //analisa al posible gandor
+                    if(( promgl>=(promgv*2))&&(mg=0)&&(siS=0)&&(posicion>=8)){
                         got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                     }
                     else {
-                        if((promgv>=(promgl*2))&&((mg=true)&&(siS=true))){
+                        if((promgv>=(promgl*2))&&(mg=1)&&(siS=1)&&(posicion>=8)){
 						got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
                         }
                         else{
@@ -100,7 +121,7 @@ int main (){
                 }
                 else{
                     if((promgv<0)&&(promgl>=0)){
-                        if((promgl>=(-(promgv*2)))&&((mg=false)&&(siS=true))){
+                        if((promgl>=(-(promgv*2)))&&(mg=0)&&(siS=1)&&(posicion>=8)){
                             got="gana el equipo LOCAL [[]]SUERTE CRACK[[]]";
                         }
                         else{
@@ -113,7 +134,7 @@ int main (){
                         }  
                     }
                      else{
-                        if((promgv>=(-(promgl*2)))&&((mg=true)&&(siS=true))){
+                        if((promgv>=(-(promgl*2)))&&(mg=1)&&(siS=1)&&(posicion>=8)){
                             got="gana el equipo VISITANTE [[]]SUERTE CRACK[[]]";
                         }
                         else{
@@ -128,27 +149,8 @@ int main (){
                 }
             break;
 
-            case 2:          
-				cout<<"digite la posicion de el equipo LOCAL y el \nVISITANTE en la calsificacion general\n";
-            	cin>>v[i]>>n[i];
-            	if (v[i]>n[i]){
-            		posicion=v[i]-n[i];
-            		if (posicion>4){
-						lov="apueste al hadicap +1.5 o +1 al LOCAL ";
-					}
-					else{
-						lov="apueste al hadicap +1.5 o +1 al LOCAL\n o los dos equipos hacen gol [[]]SUERTE CRACK[[]]";
-					}
-				}
-				else {
-					posicion=n[i]-v[i];
-					if (posicion>3){
-						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
-					}
-					else{
-						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
-					}
-				}
+            case 2:         
+            	cout<<"\n A LOS MIEDOS SE LES CORTA LA CABEZA ";
 			break;
 			
 			default: cout<<"adios espero que le sirva ;v";
