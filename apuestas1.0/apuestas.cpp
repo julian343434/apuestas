@@ -91,24 +91,33 @@ int main (){
 					else{
 						siS=0;
 					}
-				cout<<ganadorv<<ganadorl;
+				//cout<<ganadorv<<ganadorl;
 				}
 				if (v[k]>n[k]){//analisa las posiciones 
             		posicion=v[k]-n[k];
-            		if (posicion>4){
+            		if ((posicion<4)&&(ganadorl>=3)){
 						lov="apueste al hadicap +1.5 o +1 al LOCAL ";
 					}
 					else{
-						lov="apueste al hadicap +1.5 o +1 al LOCAL\n o los dos equipos hacen gol [[]]SUERTE CRACK[[]]";
+						if (posicion>=7){
+							lov="no va ha haber PRORROGA";
+						}						
+						else{
+							lov="apueste a que los dos hacen gol SI [[]]SUERTE CRACK[[]]";					
 					}
 				}
 				else {
 					posicion=n[k]-v[k];
-					if (posicion>3){
-						lov="no apueste al hadicap [[]]SUERTE CRACK[[]]";
+					if ((posicion<4)&&(ganadorv>=3)){
+						lov="apueste al hadicap +1.5 o +1 al VISTANTE [[]]SUERTE CRACK[[]]";
 					}
 					else{
-						lov="apueste al hadicap +1.5 o +1 al LOCAL [[]]SUERTE CRACK[[]]";
+						if (posicion>=7){
+							lov="no va ha haber PRORROGA";
+						}						
+						else{
+							lov="apueste a que los dos hacen gol SI [[]]SUERTE CRACK[[]]";
+						}
 					}
 				}
                 if((promgl>=0)&&(promgv>=0)){ //analisa al posible gandor
