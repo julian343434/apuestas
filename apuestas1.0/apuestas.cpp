@@ -23,7 +23,7 @@ int main (){
                 		
 					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-					sumaMA[j]=gpplee[j]+gppvee[j];//escoje el ganador de cada encuentro y su promedio de goles
+					sumaMA[j]=(gpplee[j]+gppvee[j])/2;//escoje el ganador de cada encuentro y su promedio de goles
                 	if(sumaMA[j]>=6){
                 		acumuladorMA=acumuladorMA+1;
 					}
@@ -40,10 +40,12 @@ int main (){
 				}
 					//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				l=1;
+/*
 <<<<<<< HEAD:apuestas1.0/apuestas.cpp
 				
 =======
 >>>>>>> 98d58757755deef9f501d6b0606a2ac235861135:apuestas.cpp
+*/
                 if ((resultado1>=6)&&(acumuladorMA>=4)){//analisa los over y under
                     gpp="se puede apostar al over +4.5 [[]]SUERTE CRACK[[]]";
                 }
